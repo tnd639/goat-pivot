@@ -94,27 +94,43 @@ function App() {
         />
       </div>
 
-      <button
-        onClick={handleStartTimer}
-        style={{
-          marginTop: "75px",
-          backgroundColor: "transparent",
-          fontSize: "35px",
-          border: "1px solid white",
-        }}
-      >
-        sTaRT TimEr
-      </button>
+      {!isPlaying && (
+        <button
+          onClick={handleStartTimer}
+          style={{
+            marginTop: "75px",
+            backgroundColor: "transparent",
+            fontSize: "35px",
+            border: "1px solid white",
+          }}
+        >
+          sTaRT TimEr
+        </button>
+      )}
 
       {timerDuration > 0 && isPlaying && (
-        <CountdownCircleTimer
-          isPlaying={isPlaying}
-          duration={timerDuration}
-          colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-          colorsTime={[timerDuration, timerDuration - 2, timerDuration - 5, 0]}
+        <div
+          style={{
+            marginTop: "50px",
+            marginLeft: "25%",
+            textAlign: "center",
+            width: "100%",
+          }}
         >
-          {renderTime}
-        </CountdownCircleTimer>
+          <CountdownCircleTimer
+            isPlaying={isPlaying}
+            duration={timerDuration}
+            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+            colorsTime={[
+              timerDuration,
+              timerDuration - 2,
+              timerDuration - 5,
+              0,
+            ]}
+          >
+            {renderTime}
+          </CountdownCircleTimer>
+        </div>
       )}
     </>
   );
