@@ -25,7 +25,6 @@ const renderTime = ({ remainingTime }: Props) => {
   );
 };
 
-
 function App() {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -41,26 +40,71 @@ function App() {
 
   return (
     <>
-      <input
-        type="number"
-        value={hours}
-        onChange={(e) => setHours(Number(e.target.value))}
-        placeholder="Hours"
-      />
-      <input
-        type="number"
-        value={minutes}
-        onChange={(e) => setMinutes(Number(e.target.value))}
-        placeholder="Minutes"
-      />
-      <input
-        type="number"
-        value={seconds}
-        onChange={(e) => setSeconds(Number(e.target.value))}
-        placeholder="Seconds"
-      />
+      <div style={{ margin: "auto" }}>
+        <input
+          type="number"
+          value={hours}
+          onChange={(e) => setHours(Number(e.target.value))}
+          style={{
+            backgroundColor: "transparent",
+            border: "2px solid black",
+            marginTop: "50px",
+            marginRight: "20px",
+            textAlign: "center",
+            color: "black",
+            width: "100px",
+            fontSize: "50px",
+            borderRadius: "10px",
+            paddingBottom: "5px",
+            paddingTop: "5px",
+          }}
+        />
+        <input
+          type="number"
+          value={minutes}
+          onChange={(e) => setMinutes(Number(e.target.value))}
+          style={{
+            backgroundColor: "transparent",
+            border: "2px solid black",
+            marginRight: "20px",
+            textAlign: "center",
+            color: "black",
+            width: "100px",
+            fontSize: "50px",
+            borderRadius: "10px",
+            paddingBottom: "5px",
+            paddingTop: "5px",
+          }}
+        />
+        <input
+          type="number"
+          value={seconds}
+          onChange={(e) => setSeconds(Number(e.target.value))}
+          style={{
+            backgroundColor: "transparent",
+            border: "2px solid black",
+            textAlign: "center",
+            width: "100px",
+            color: "black",
+            fontSize: "50px",
+            borderRadius: "10px",
+            paddingBottom: "5px",
+            paddingTop: "5px",
+          }}
+        />
+      </div>
 
-      <button onClick={handleStartTimer}>Start Timer</button>
+      <button
+        onClick={handleStartTimer}
+        style={{
+          marginTop: "75px",
+          backgroundColor: "transparent",
+          fontSize: "35px",
+          border: "1px solid white",
+        }}
+      >
+        sTaRT TimEr
+      </button>
 
       {timerDuration > 0 && isPlaying && (
         <CountdownCircleTimer

@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  margin-right: 5px;
+  opacity: 1;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
