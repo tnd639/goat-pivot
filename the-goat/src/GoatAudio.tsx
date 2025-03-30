@@ -1,9 +1,11 @@
-import Button from "./Button";
 import sound from "./assets/goat-sounds.mp3";
+import { useEffect } from "react";
 
 function GoatAudio() {
   let goatAudio = new Audio(sound);
-  return <Button onClick={() => goatAudio.play()}>Button</Button>;
+  goatAudio.play();
+
+  return null;
 }
 
 export default GoatAudio;
